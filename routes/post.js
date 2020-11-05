@@ -4,7 +4,7 @@ const validator = require('../validator')
 
 const router = express.Router();
 
-router.get('/getposts', getPosts);
+router.get('/', getPosts);
 router.post('/post', validator.createPostValidor, createPost);
 
 module.exports =  router;
