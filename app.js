@@ -70,7 +70,8 @@ app.use(bodyParser.urlencoded({ extended : true}));
 app.use(expressValidator());
 app.use("/", postRoutes);
 
-const port = 8800;
+const PORT = process.env.PORT || 8800;
+// const port = ;
 app.listen(port, () => {
     console.log(`node js is listening on port: ${port}`)
 });
