@@ -39,7 +39,8 @@ const expressValidator = require('express-validator')
 const mongoose = require('mongoose');
 // load env variables
 const dotenv = require('dotenv');
-dotenv.config()
+// dotenv.config()
+dotenv.config({path: '.env'});
  
 const postRoutes = require('./routes/post');
 
@@ -70,8 +71,7 @@ app.use(bodyParser.urlencoded({ extended : true}));
 app.use(expressValidator());
 app.use("/", postRoutes);
 
-const PORT = process.env.PORT || 8800;
-// const port = ;
-app.listen(port, () => {
-    console.log(`node js is listening on port: ${port}`)
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+    console.log(`node js is listening on port: ${process.env.PORT}`)
 });
